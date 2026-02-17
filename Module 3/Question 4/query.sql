@@ -9,3 +9,8 @@ Round the discount_amount and discount_price columns to 2 decimal places.
 Sort the result set by the discount_price column in descending sequence.
 Use the LIMIT clause so the result set contains only the first 5 rows.
 */
+
+SELECT product_name, list_price, discount_percent, ROUND(list_price * discount_percent / 100, 2) AS discount_amount, ROUND(list_price * (1 - discount_percent / 100), 2) AS discount_price
+FROM products
+ORDER BY discount_price DESC
+LIMIT 5;

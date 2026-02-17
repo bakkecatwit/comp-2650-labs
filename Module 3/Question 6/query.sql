@@ -6,3 +6,8 @@ ship_date	The ship_date column
 Return only the rows where the ship_date column contains a null value.
 Sort the result set by the order_id column in descending sequence.
 */
+
+SELECT order_id, order_date, ship_date
+FROM orders
+WHERE ship_date IS NULL
+ORDER BY order_id DESC;

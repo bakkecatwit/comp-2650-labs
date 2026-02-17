@@ -6,3 +6,5 @@ tax_amount	The price multiplied by the tax
 total	The price plus the tax
 To calculate the fourth column, add the expressions you used for the first and third columns.
 */
+
+SELECT 100 AS price, 0.07 AS tax_rate, 100 * 0.07 AS tax_amount, 100 + 100 * 0.07 AS total;
