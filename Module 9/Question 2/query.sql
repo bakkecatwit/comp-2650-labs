@@ -8,3 +8,13 @@ A column that uses the DATE_FORMAT function to return the order_date column in t
 Sort the result set by the order_date column in ascending sequence.
 */
 
+SELECT
+    order_date,
+    DATE_FORMAT(order_date, '%Y') AS order_year,
+    DATE_FORMAT(order_date, '%b-%d-%Y') AS order_date_formatted,
+    LOWER(DATE_FORMAT(order_date, '%l:%i %p')) AS order_time,
+    DATE_FORMAT(order_date, '%m/%d/%y %H:%i') AS order_datetime
+FROM
+    orders
+ORDER BY
+    order_date ASC;

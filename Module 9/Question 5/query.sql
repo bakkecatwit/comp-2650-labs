@@ -7,3 +7,11 @@ Sort the result set by the email_address column in ascending sequence.
 Note: The username part of the email addresses contains only letters, and the domain name part contains only letters and a period.
 */
 
+SELECT
+    email_address,
+    REGEXP_SUBSTR(email_address, '^[A-Za-z]+') AS user_name,
+    REGEXP_SUBSTR(email_address, '[A-Za-z.]+$') AS domain_name
+FROM
+    administrators
+ORDER BY
+    email_address ASC;

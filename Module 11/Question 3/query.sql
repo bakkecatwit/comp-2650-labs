@@ -4,3 +4,6 @@ Add one column for product price named “product_price” that provides for thr
 Add one column for the date and time that the product was added to the database named “product_date”
 */
 
+ALTER TABLE products
+ADD COLUMN product_price DECIMAL(5, 2) DEFAULT 9.99,
+ADD COLUMN product_date DATETIME;

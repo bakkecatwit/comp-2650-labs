@@ -6,3 +6,11 @@ A column named discount_amount that uses the previous two columns to calculate t
 Sort the result set by the discount_amount column in ascending sequence.
 */
 
+SELECT
+    list_price,
+    discount_percent,
+    ROUND(list_price * (discount_percent / 100), 2) AS discount_amount
+FROM
+    products
+ORDER BY
+    discount_amount ASC;
